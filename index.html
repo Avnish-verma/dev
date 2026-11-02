@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#04060c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="CLASSIFIED FILE: DEVANSH - The Neural Archive × Midnight Cinéma Experience.">
+  <title>CLASSIFIED FILE // DEVANSH</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+  <!-- Google Fonts: Orbitron, Chakra Petch, Bodoni Moda, Playfair Display, Share Tech Mono & Special Elite -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,600&family=Chakra+Petch:wght@500;600;700&family=Orbitron:wght@600;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-cyber" id="body-root">
+  <!-- Dynamic Canvas for Cyber Digital Rain, Projector Dust Motes, & Golden Fireworks -->
+  <canvas id="hybrid-canvas" aria-hidden="true"></canvas>
+
+  <!-- Dual CRT / 35mm Film Grain Layer -->
+  <div class="cinema-grain-layer" id="film-grain" aria-hidden="true"></div>
+
+  <!-- Real 35mm Celluloid Film Burn Transition Overlay -->
+  <div class="film-burn-overlay" id="film-burn" aria-hidden="true">
+    <div class="burn-hole"></div>
+  </div>
+
+  <!-- Cinematic Projector Light Cone Beam -->
+  <div class="projector-beam" id="projector-beam" aria-hidden="true"></div>
+
+  <!-- Ambient Audio Element for procedural Web Audio API Synthesizer -->
+  <audio id="bg-audio" preload="none" loop playsinline></audio>
+
+  <!-- Top Hybrid HUD Navigation -->
+  <header class="hybrid-hud" id="hud">
+    <div class="hud-left">
+      <div class="hud-badge">
+        <span class="status-dot" id="hud-status-dot"></span>
+        <span class="hud-brand-text" id="hud-brand">CLASSIFIED FILE // DEVANSH</span>
+      </div>
+      <div class="hud-telemetry font-mono" id="hud-telemetry">STAGE 01 // TERMINAL_BOOT</div>
+    </div>
+
+    <!-- 7-Stage Progress Bar -->
+    <nav class="stage-nav" aria-label="Experience Stages">
+      <div class="stage-track" aria-hidden="true">
+        <div class="stage-fill" id="stage-fill"></div>
+      </div>
+      <div class="stage-nodes" id="stage-nodes">
+        <button class="stg-node active" data-stage="0" aria-label="Stage 1: Boot"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="1" aria-label="Stage 2: Biometrics"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="2" aria-label="Stage 3: Matrix Decrypt"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="3" aria-label="Stage 4: Dossier"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="4" aria-label="Stage 5: Cinema Transform"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="5" aria-label="Stage 6: Premiere"><span class="node-pip"></span></button>
+        <button class="stg-node" data-stage="6" aria-label="Stage 7: Letter"><span class="node-pip"></span></button>
+      </div>
+    </nav>
+
+    <!-- Sound Control Button with Live Audio Visualizer -->
+    <div class="hud-right">
+      <button class="audio-control-btn" id="audio-toggle" aria-label="Toggle Sound" aria-pressed="false">
+        <div class="equalizer-bars" aria-hidden="true">
+          <span class="eq-bar eb-1"></span>
+          <span class="eq-bar eb-2"></span>
+          <span class="eq-bar eb-3"></span>
+          <span class="eq-bar eb-4"></span>
+        </div>
+        <span class="audio-tag font-mono" id="audio-tag">AUDIO</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Interactive Gesture Prompt -->
+  <div class="tactile-hint font-mono" id="tactile-hint" aria-hidden="true">
+    <span class="hint-glyph">✦</span>
+    <span id="hint-text">Touch screen to interact with the neural archive</span>
+  </div>
+
+  <!-- Main Viewport Container -->
+  <main class="experience-viewport" id="experience-viewport">
+
+    <!-- ================= STAGE 01: FUTURISTIC TERMINAL BOOT-UP ================= -->
+    <section class="stage-view stage-boot active" id="stage-0" aria-label="Stage 1: Terminal Boot">
+      <div class="stage-container">
+        <!-- Live Terminal Stream Box -->
+        <div class="terminal-monitor font-mono">
+          <div class="monitor-top-bar">
+            <span class="dot-win dw-red"></span>
+            <span class="dot-win dw-yellow"></span>
+            <span class="dot-win dw-green"></span>
+            <span class="mon-title">SECURE_SHELL // DEVANSH_DOSSIER.ENC</span>
+          </div>
+          <div class="terminal-log-stream" id="terminal-stream">
+            <p class="log-line">> INITIATING SECURE ARCHIVE PROTOCOL...</p>
+            <p class="log-line">> QUANTUM HASH: 0x7E49A29F_DEVANSH</p>
+            <p class="log-line">> STATUS: TOP-SECRET CLASSIFIED DOSSIER FOUND</p>
+            <p class="log-line text-cyan">> LEVEL 10 CLEARANCE REQUIRED TO DECLASSIFY</p>
+            <p class="log-line text-lime">> IN-DISPLAY SENSOR CALIBRATING...</p>
+          </div>
+        </div>
+
+        <div class="hybrid-card cyber-flavor">
+          <div class="corner-bracket cb-tl"></div>
+          <div class="corner-bracket cb-tr"></div>
+          <div class="corner-bracket cb-bl"></div>
+          <div class="corner-bracket cb-br"></div>
+
+          <div class="classified-stamp font-mono">[ CLASSIFIED // LEVEL 10 ]</div>
+          <h1 class="hybrid-heading font-orbitron">Tonight is different.</h1>
+          <p class="hybrid-subtext font-mono">Some stories are too extraordinary to remain sealed. Verify your biometric identity below.</p>
+
+          <div class="action-dock">
+            <button class="stage-btn cyber-primary" id="btn-to-biometrics" type="button">
+              <span class="btn-shimmer" aria-hidden="true"></span>
+              <span class="btn-text">Proceed to Scanner Gate</span>
+              <span class="btn-icon">❯</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 02: IN-DISPLAY THUMBPRINT VERIFICATION ================= -->
+    <section class="stage-view stage-biometrics" id="stage-1" aria-label="Stage 2: Biometric Verification">
+      <div class="stage-container biometrics-container">
+        <div class="hybrid-card cyber-flavor bio-info-card text-center">
+          <div class="corner-bracket cb-tl"></div>
+          <div class="corner-bracket cb-tr"></div>
+          <div class="corner-bracket cb-bl"></div>
+          <div class="corner-bracket cb-br"></div>
+
+          <div class="classified-stamp font-mono">[ IN-DISPLAY BIOMETRIC SENSOR ]</div>
+          <h2 class="hybrid-sub-heading font-orbitron">Place Your Thumb on the Sensor</h2>
+          <p class="hybrid-subtext font-mono">Rest your thumb naturally near the bottom of your phone screen to authenticate access.</p>
+
+          <div class="action-dock">
+            <button class="stage-btn cyber-outline btn-micro" id="btn-bypass-bio" type="button">
+              <span class="btn-text">Bypass with Passcode</span>
+              <span class="btn-icon">❯</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ergonomically Positioned Lower In-Display Thumbprint Scanner -->
+        <div class="in-display-sensor-zone" id="biometric-zone">
+          <div class="sensor-optical-glow" id="sensor-glow" aria-hidden="true"></div>
+          <div class="sensor-wave-rings" aria-hidden="true">
+            <div class="wave-ring wr-1"></div>
+            <div class="wave-ring wr-2"></div>
+            <div class="wave-ring wr-3"></div>
+          </div>
+
+          <div class="thumbprint-target" id="biometric-pod" role="button" tabindex="0" aria-label="Rest your thumb here to scan fingerprint">
+            <!-- Full Anatomical Human Thumbprint SVG -->
+            <svg class="full-thumb-svg" viewBox="0 0 120 160" width="86" height="114">
+              <!-- Papillary Ridges / Whorl Pattern -->
+              <path class="thumb-ridge r0" d="M60 145 C45 145 35 130 35 110 C35 80 45 55 60 55 C75 55 85 80 85 110 C85 130 75 145 60 145" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="thumb-ridge r1" d="M60 135 C50 135 42 122 42 105 C42 82 50 65 60 65 C70 65 78 82 78 105 C78 122 70 135 60 135" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path class="thumb-ridge r2" d="M60 122 C53 122 48 112 48 100 C48 85 54 75 60 75 C66 75 72 85 72 100 C72 112 67 122 60 122" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="thumb-ridge r3" d="M60 110 C56 110 54 104 54 98 C54 90 57 85 60 85 C63 85 66 90 66 98 C66 104 64 110 60 110" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <!-- Outer Whorl Arcs -->
+              <path class="thumb-ridge r4" d="M28 120 C25 90 35 40 60 40 C85 40 95 90 92 120" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="thumb-ridge r5" d="M20 105 C18 70 30 25 60 25 C90 25 102 70 100 105" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="thumb-ridge r6" d="M14 90 C12 55 25 12 60 12 C95 12 108 55 106 90" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              <path class="thumb-ridge r7" d="M10 75 C8 42 22 2 60 2 C98 2 112 42 110 75" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Holographic Radial Laser Scan -->
+            <div class="thumb-laser-scanner" id="thumb-laser" aria-hidden="true"></div>
+          </div>
+
+          <div class="sensor-progress-wrapper">
+            <div class="sensor-progress-track">
+              <div class="sensor-progress-fill" id="scanner-fill"></div>
+            </div>
+            <p class="sensor-status-caption font-mono" id="scanner-text">REST THUMB TO AUTHENTICATE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 03: MATRIX GLITCH REVEALS DEVANSH ================= -->
+    <section class="stage-view stage-matrix" id="stage-2" aria-label="Stage 3: Matrix Decryption">
+      <div class="stage-container text-center">
+        <div class="classified-stamp font-mono text-cyan">[ DECRYPTION PROTOCOL COMPLETE ]</div>
+        <p class="target-confirmed-text font-mono">SUBJECT IDENTIFIED ON GRID</p>
+
+        <!-- Matrix Decryption Stage -->
+        <div class="matrix-reveal-stage" id="matrix-stage">
+          <div class="cyber-glow-orb" id="matrix-glow" aria-hidden="true"></div>
+          <div class="matrix-scan-beam" id="matrix-beam" aria-hidden="true"></div>
+          <h2 class="matrix-decoded-name font-orbitron" id="matrix-name" aria-label="DEVANSH">DEVANSH</h2>
+        </div>
+
+        <div class="matrix-card-box">
+          <p class="matrix-proclamation font-mono">Yes, this entire classified dossier was built in your honor.</p>
+          <div class="action-dock">
+            <button class="stage-btn cyber-magenta" id="btn-to-dossier" type="button">
+              <span class="btn-shimmer" aria-hidden="true"></span>
+              <span class="btn-text">Open Classified Dossier</span>
+              <span class="btn-icon">✦</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 04: CLASSIFIED DOSSIER WITH SCRATCHABLE REDACTIONS ================= -->
+    <section class="stage-view stage-dossier" id="stage-3" aria-label="Stage 4: Dossier Unlock">
+      <div class="stage-container">
+        <!-- Physical Style Top-Secret Folder -->
+        <div class="dossier-folder" id="dossier-folder">
+          <div class="dossier-tab font-mono">TOP_SECRET // #0211</div>
+          <div class="dossier-stamp-red font-mono">CONFIDENTIAL</div>
+
+          <div class="dossier-header">
+            <span class="dossier-code font-mono">ARCHIVE REF: DEVANSH_2026</span>
+            <span class="dossier-clearance font-mono text-lime">CLEARANCE: GRANTED</span>
+          </div>
+
+          <div class="dossier-body font-mono">
+            <div class="field-row">
+              <span class="field-key">SUBJECT:</span>
+              <span class="field-val highlight-val">DEVANSH</span>
+            </div>
+            <div class="field-row">
+              <span class="field-key">STATUS:</span>
+              <span class="field-val">EXCEPTIONAL // LEGENDARY ASSET</span>
+            </div>
+            <!-- Scratchable Redaction Bar 1 -->
+            <div class="field-row">
+              <span class="field-key">TRAITS:</span>
+              <div class="redaction-wrapper" data-revealed="false">
+                <span class="field-val redacted-content">AMBITIOUS • BRILLIANT • FEARLESS</span>
+                <button class="redaction-cover" type="button" aria-label="Tap to declassify traits">
+                  <span class="redact-text">[ TAP TO DECLASSIFY ]</span>
+                </button>
+              </div>
+            </div>
+            <!-- Scratchable Redaction Bar 2 -->
+            <div class="field-row">
+              <span class="field-key">SPECIALTY:</span>
+              <div class="redaction-wrapper" data-revealed="false">
+                <span class="field-val redacted-content">TURNS EVERY CHALLENGE INTO VICTORY</span>
+                <button class="redaction-cover" type="button" aria-label="Tap to declassify specialty">
+                  <span class="redact-text">[ TAP TO DECLASSIFY ]</span>
+                </button>
+              </div>
+            </div>
+            <!-- Scratchable Redaction Bar 3 -->
+            <div class="field-row">
+              <span class="field-key">DIRECTIVE:</span>
+              <div class="redaction-wrapper" data-revealed="false">
+                <span class="field-val redacted-content text-cyan">COMMENCE CINEMATIC CELEBRATION</span>
+                <button class="redaction-cover" type="button" aria-label="Tap to declassify directive">
+                  <span class="redact-text">[ TAP TO DECLASSIFY ]</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dossier-footer font-mono">
+            <span class="film-canister-icon">🎞️</span>
+            <span>CINEMATIC ARCHIVE REEL LOADED IN 35MM PROJECTOR</span>
+          </div>
+        </div>
+
+        <div class="action-dock dossier-actions">
+          <button class="stage-btn cinema-gold" id="btn-to-transform" type="button">
+            <span class="btn-shimmer" aria-hidden="true"></span>
+            <span class="btn-text">Play Cinematic Reel</span>
+            <span class="btn-icon">▶</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 05: FILM BURN TRANSFORMATION & COUNTDOWN ================= -->
+    <section class="stage-view stage-transform" id="stage-4" aria-label="Stage 5: Cinematic Transformation">
+      <div class="stage-container text-center">
+        <!-- Vintage 35mm Countdown Leader -->
+        <div class="film-countdown-box" id="film-countdown">
+          <div class="countdown-crosshair-h"></div>
+          <div class="countdown-crosshair-v"></div>
+          <div class="countdown-circle-sweep"></div>
+          <div class="countdown-number font-bodoni" id="countdown-num">5</div>
+        </div>
+
+        <div class="transform-card cinema-card">
+          <p class="cinema-whisper font-playfair">Transforming digital code into analog celluloid...</p>
+          <h2 class="cinema-subhead font-bodoni">The Projector Ignites.</h2>
+          <p class="cinema-meta font-mono">1960s 35MM PANAVISION // SOUNDTRACK ACTIVATING</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 06: BIRTHDAY MOVIE PREMIERE ================= -->
+    <section class="stage-view stage-premiere" id="stage-5" aria-label="Stage 6: Birthday Movie Premiere">
+      <div class="stage-container">
+        <!-- Widescreen Cinematic Letterbox Theater -->
+        <div class="premiere-theater cinema-card text-center">
+          <div class="vintage-film-header font-mono">
+            <span>METRO-GOLDWYN-DEVANSH</span>
+            <span>FEATURING IN 35MM</span>
+          </div>
+
+          <p class="marquee-tag font-playfair italic">Tonight's Feature Presentation</p>
+          <h1 class="premiere-title font-bodoni">Happy Birthday, Devansh!</h1>
+          <p class="premiere-subtitle font-playfair">Today, the cinema of life celebrates your journey.</p>
+
+          <!-- Interactive Tear-able Golden VIP Movie Ticket -->
+          <div class="vip-ticket-wrapper" id="ticket-wrapper">
+            <div class="vip-ticket" id="vip-ticket" role="button" tabindex="0" aria-label="Tap to tear your VIP movie pass">
+              <div class="ticket-half ticket-left">
+                <span class="ticket-watermark font-mono">VIP</span>
+                <span class="ticket-adm font-mono">★ ADMIT ONE ★</span>
+                <h3 class="ticket-name font-bodoni">DEVANSH</h3>
+                <span class="ticket-date font-mono">SPECIAL EDITION // 2026</span>
+              </div>
+              <div class="ticket-perforation" aria-hidden="true">
+                <span class="tear-notch top-notch"></span>
+                <span class="tear-line"></span>
+                <span class="tear-notch bottom-notch"></span>
+              </div>
+              <div class="ticket-half ticket-right">
+                <span class="stub-code font-mono">#0211</span>
+                <span class="stub-row font-mono">ROW A</span>
+                <span class="stub-seat font-mono">SEAT 01</span>
+                <span class="stub-hint font-mono">TAP TO TEAR</span>
+              </div>
+            </div>
+            <p class="ticket-action-caption font-mono" id="ticket-caption">Tap or swipe across perforation to tear VIP pass</p>
+          </div>
+
+          <!-- Interactive 35mm Filmstrip Cards with Photo Slot -->
+          <div class="filmstrip-reel" aria-label="Movie Chapters">
+            <button class="film-frame" data-synopsis="🎬 REEL 01: The Journey — Endless horizons, bold discoveries, and triumphs in everything you pursue!" aria-label="Scene 1: Journey">
+              <span class="frame-sprocket sp-top"></span>
+              <span class="frame-label font-mono">REEL 01</span>
+              <span class="frame-title font-playfair">Ambition</span>
+              <span class="frame-sprocket sp-bottom"></span>
+            </button>
+            <button class="film-frame frame-featured" data-synopsis="⚡ REEL 02: Mastery — Relentless growth, deep confidence, and turning every dream into a reality!" aria-label="Scene 2: Mastery">
+              <span class="frame-sprocket sp-top"></span>
+              <span class="frame-label font-mono">REEL 02</span>
+              <!-- Polaroid / Custom Photo Frame Container -->
+              <div class="photo-cell" id="photo-cell">
+                <img src="assets/images/devansh.svg" alt="Devansh Memory" class="devansh-photo">
+              </div>
+              <span class="frame-sprocket sp-bottom"></span>
+            </button>
+            <button class="film-frame" data-synopsis="🍿 REEL 03: Pure Joy — Unforgettable memories, genuine smiles, and a year full of incredible laughter!" aria-label="Scene 3: Joy">
+              <span class="frame-sprocket sp-top"></span>
+              <span class="frame-label font-mono">REEL 03</span>
+              <span class="frame-title font-playfair">Joy</span>
+              <span class="frame-sprocket sp-bottom"></span>
+            </button>
+          </div>
+
+          <!-- Dynamic Film Synopsis Marquee -->
+          <div class="film-marquee-box font-mono" id="film-synopsis-box">
+            <span class="synopsis-text" id="synopsis-text">Tap a movie reel above to preview chapter notes</span>
+          </div>
+
+          <!-- Staggered Heartfelt Tribute Dialogue -->
+          <div class="dialogue-scroll-box">
+            <p class="cinema-p font-playfair italic p1">I'm genuinely glad our paths crossed.</p>
+            <p class="cinema-p p2">Here's to happiness, success, new adventures, and countless unforgettable moments ahead.</p>
+            <p class="cinema-p p3 font-playfair highlight-quote">Keep growing, keep smiling, and keep being you!</p>
+          </div>
+
+          <div class="action-dock">
+            <button class="stage-btn cinema-gold" id="btn-to-letter" type="button">
+              <span class="btn-shimmer" aria-hidden="true"></span>
+              <span class="btn-text">Read Director's Note</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STAGE 07: PERSONAL BIRTHDAY LETTER & WAX SEAL ================= -->
+    <section class="stage-view stage-letter" id="stage-6" aria-label="Stage 7: Personal Birthday Letter">
+      <div class="stage-container text-center">
+        <!-- Vintage Typewriter Letter on Aged Paper -->
+        <div class="vintage-typewriter-card cinema-card" id="export-card">
+          <div class="letter-stamp-circle font-mono" aria-hidden="true">
+            <span>OFFICIAL</span>
+            <span>CELEBRATION</span>
+            <span>2026</span>
+          </div>
+
+          <h2 class="letter-heading font-bodoni">One last thing...</h2>
+
+          <div class="letter-content font-special">
+            <p class="letter-p">Some people make ordinary moments special just by being around.</p>
+            <p class="letter-p text-gold font-playfair">I'm glad I got to know you, Devansh.</p>
+            <p class="letter-p">Wishing you an amazing year ahead. Never stop exploring, learning, and becoming the person you want to be.</p>
+          </div>
+
+          <!-- Interactive 3D Wax Seal with Embossed Monogram "D" -->
+          <div class="wax-seal-wrapper">
+            <div class="wax-seal" id="wax-seal" role="button" tabindex="0" aria-label="Tap to compress the wax seal with monogram D">
+              <span class="seal-letter-d font-bodoni">D</span>
+              <span class="seal-rim-ring" aria-hidden="true"></span>
+            </div>
+            <p class="seal-hint font-mono" id="seal-caption">Tap the wax seal to stamp your memory</p>
+          </div>
+
+          <div class="film-credits font-mono">
+            <span class="credits-line"></span>
+            <span class="credits-text">PRODUCED WITH CARE, JUST FOR YOU.</span>
+            <span class="credits-line"></span>
+          </div>
+
+          <div class="action-dock letter-actions">
+            <button class="stage-btn cinema-gold btn-save-badge" id="btn-save-badge" type="button">
+              <span class="btn-icon">💾</span>
+              <span class="btn-text">Save Birthday Dossier</span>
+            </button>
+            <button class="stage-btn cinema-cyan" id="btn-share-squad" type="button">
+              <span class="btn-icon">🔗</span>
+              <span class="btn-text">Share With Squad</span>
+            </button>
+            <button class="stage-btn replay-btn" id="btn-replay-all" type="button">
+              <span class="btn-text">Re-Play Feature Film ↺</span>
+            </button>
+          </div>
+
+          <!-- Squad Guestbook Clearance Log -->
+          <div class="squad-guestbook-box" id="squad-guestbook">
+            <div class="guestbook-header font-mono">
+              <span class="guest-shield-icon">🛡️</span>
+              <span class="guestbook-title">SQUAD ACCESS // LOG YOUR CLEARANCE</span>
+            </div>
+            <p class="guestbook-sub font-mono">Friends accessing Devansh's Archive can leave their signature below:</p>
+            <div class="guestbook-inputs">
+              <input type="text" id="guest-name-input" class="guest-input font-mono" placeholder="Your Name / Codename..." maxlength="40" autocomplete="name">
+              <input type="text" id="guest-wish-input" class="guest-input font-mono" placeholder="A wish or note for Devansh..." maxlength="140">
+              <button type="button" id="btn-submit-guest" class="guest-btn font-mono">SIGN LEDGER ➔</button>
+            </div>
+            <p class="guest-status-msg font-mono" id="guest-status-msg" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- High-Precision Telemetry Engine -->
+  <script src="telemetry.js?v=3.1"></script>
+  <script src="script.js?v=3.1"></script>
+</body>
+</html>
